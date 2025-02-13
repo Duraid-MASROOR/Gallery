@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #ffcccb;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        h1 {
+            color: #d63384;
+            font-size: 3em;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .card-container {
+            perspective: 1000px;
+            width: 700px;
+            margin: 50px auto;
+        }
+        .card {
+            width: 100%;
+            height: 450px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card-front {
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .card-back {
+            background: white;
+            transform: rotateY(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-back img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Happy Birthday! 🎂</h1>
+        <p>Wishing you a fantastic day filled with joy and laughter!</p>
+        <button onclick="playMusic()">Play Birthday Song 🎶</button>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-front">
+                <h2>Dear [AQSA MAM],</h2>
+                <p>Happy Birthday to you, now its time for treat iss se aage mujhe samajh nai aa rha kia likhu bas at the end just wanna wish you a birthday, baaki acha nai kia hamare saath akele chale gaye Lahaore</p>
+                <p>Happy Birthday! 🎈🎂🎁</p>
+                <p>With love,</p>
+                <p>[Duraid Masroor]</p>
+            </div>
+            <div class="card-back">
+                <img src="aqsa.jpeg" alt="Birthday Person" width="100%">
+            </div>
+        </div>
+    </div>
+    <p>Please click or hover the card area!</p>
+    <canvas id="confettiCanvas"></canvas>
+    <audio id="birthdaySong" src="Sare bolo happy birthday.mp3"></audio>
+    <script>
+        function playMusic() {
+            var audio = document.getElementById("birthdaySong");
+            audio.play();
+        }
+    </script>
+</body>
+</html>
